@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Coverter App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<style type="text/css">
+		body{
+			margin-top: 70px;
+			background-color: black;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="display-4 text-center">Speed Converter</h1>
+					<form>
+						<div class="form-group">
+							<input type="number" class="form-control-lg" placeholder="Enter Meterpersecond" id="lbsInput" oninput="speedConverter(this.value)" onchange="speedConverter(this.value)">
+						</div>
+					</form>
+					<div id="output">
+						<div class="card bg-primary">
+							<div class="card-block ">
+								<h4>Miles per hour</h4>
+								<div id="mphOutput" ></div>
+							</div>
+							
+						</div>
+						<div id="output">
+						<div class="card bg-danger">
+							<div class="card-block">
+								<h4>Kilometer per hour</h4>
+								<div id ="kmphOutput"></div>
+							</div>
+							
+						</div>
+						<div id="output">
+						<div class="card bg-success mb-2">
+							<div class="card-block">
+								<h4>Knot</h4>
+								<div id="knotOutput"></div>
+							</div>
+							
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+
+		function speedConverter(value){
+
+			document.getElementById("mphOutput").innerHTML=value*2.23694;
+			document.getElementById("kmphOutput").innerHTML=value*3.6;
+			document.getElementById("knotOutput").innerHTML=value*1.94384;
+		}
+	</script>
+</body>
+</html>

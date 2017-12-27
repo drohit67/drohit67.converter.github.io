@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Converter App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<style type="text/css">
+		body{
+			margin-top: 70px;
+			background-color: black;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="display-4 text-center">Digital Storage Converter</h1>
+					<form>
+						<div class="form-group">
+							<input type="number" class="form-control-lg" placeholder="Enter Byte" id="lbsInput" oninput="digitalConverter(this.value)" onchange="digitalConverter(this.value)">
+						</div>
+					</form>
+					<div id="output">
+						<div class="card bg-primary">
+							<div class="card-block ">
+								<h4>Bit</h4>
+								<div id="bitOutput" ></div>
+							</div>
+							
+						</div>
+						<div id="output">
+						<div class="card bg-danger">
+							<div class="card-block">
+								<h4>KiloByte(KB)</h4>
+								<div id ="kbOutput"></div>
+							</div>
+							
+						</div>
+						<div id="output">
+						<div class="card bg-success mb-2">
+							<div class="card-block">
+								<h4>MegaByte(MB)</h4>
+								<div id="mbOutput"></div>
+							</div>
+							
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+
+		function digitalConverter(value){
+
+			document.getElementById("bitOutput").innerHTML=value*8;
+			document.getElementById("kbOutput").innerHTML=value*0.001;
+			document.getElementById("mbOutput").innerHTML=value*0.000001;
+		}
+	</script>
+</body>
+</html>

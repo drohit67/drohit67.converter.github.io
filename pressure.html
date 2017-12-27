@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Coverter App</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<style type="text/css">
+		body{
+			margin-top: 70px;
+			background-color: black;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="display-4 text-center">Pressure Converter</h1>
+					<form>
+						<div class="form-group">
+							<input type="number" class="form-control-lg" placeholder="Enter Atmosphere" id="lbsInput" oninput="pressureConverter(this.value)" onchange="pressureConverter(this.value)">
+						</div>
+					</form>
+					<div id="output">
+						<div class="card bg-primary">
+							<div class="card-block ">
+								<h4>Bar</h4>
+								<div id="barOutput" ></div>
+							</div>
+							
+						</div>
+						<div id="output">
+						<div class="card bg-danger">
+							<div class="card-block">
+								<h4>Pascal</h4>
+								<div id ="pascalOutput"></div>
+							</div>
+							
+						</div>
+						<div id="output">
+						<div class="card bg-success mb-2">
+							<div class="card-block">
+								<h4>Torr</h4>
+								<div id="torrOutput"></div>
+							</div>
+							
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+
+		function pressureConverter(value){
+
+			document.getElementById("barOutput").innerHTML=value*1.01325;
+			document.getElementById("pascalOutput").innerHTML=value*101325;
+			document.getElementById("torrOutput").innerHTML=value*760;
+		}
+	</script>
+</body>
+</html>
